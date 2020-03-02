@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { Router } from 'routes';
-import styles from './index.module.scss';
+import styles from './Sidemenu.module.scss';
 
 const Sidemenu = ({ open, onClose }) => {
   const [ search, setSearch ] = useState('');
@@ -12,9 +12,12 @@ const Sidemenu = ({ open, onClose }) => {
     { label: '政黨', icon: 'fas fa-users', href: '/party' },
     { label: '小遊戲', icon: 'fas fa-star', href: '/game' }
   ];
+  
   const gotoFn = (url) => () => {
     Router.pushRoute(url);
+    onClose();
   }
+  
   return (
       <div className={classnames(styles.sidemenuContainer, {[styles.open]: open})}>
         <button className={styles.overlay} onClick={onClose}/>

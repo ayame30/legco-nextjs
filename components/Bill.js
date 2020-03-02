@@ -5,6 +5,7 @@ import Card, { SecondReadStatus } from '../Card';
 
 const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
   const onClick = () => Router.pushRoute(`/bills/${id}`);
+  
   return (
     <Card
       statusComponent={readStatus === 2 ? <SecondReadStatus /> : null}

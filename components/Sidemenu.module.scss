@@ -1,0 +1,84 @@
+@import "scss/_variables.scss";
+
+$topbarHeight: 44px;
+$sidemenuWidth: 300px;
+$bg-sidemenu: #282828;
+
+.app {
+  height: 100%;
+  overflow: hidden;
+  padding-top: $topbarHeight;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $topbarHeight;
+  background: #3E3E3E;
+  color: $text-white;
+  i {
+    color: $text-white;
+  }
+}
+
+.sidemenuContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  z-index: 2;
+  &.open {
+    width: 100%;
+    .overlay {
+      opacity: 1;
+    }
+  }
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+}
+.sidemenu {
+  position: absolute;
+  left: $sidemenuWidth * -1;
+  top: 0;
+  height: 100%;
+  width: $sidemenuWidth;
+  background: $bg-sidemenu;
+  z-index: 2;
+  color: $text-white;
+  padding: 10px;
+  transition: all 0.4s;
+  &.open {
+    left: 0;
+  }
+  .input {
+    border-radius: 4px;
+    padding: 3px 0;
+    background: $bg;
+    font-size: 20px;
+    i {
+        color: $bg-grey3;
+    }
+  }
+}
+.menu button{
+  color: #fff;
+}
+
+.children {
+  height: 100%;
+  width: 100%;
+}
+.whenSidemenuOpen {
+  pointer-events: none;
+}
