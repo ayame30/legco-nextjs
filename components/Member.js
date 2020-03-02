@@ -5,7 +5,6 @@ import { Router } from 'routes';
 
 
 const Member = ({ id, name, party, image, constituencyType, constituencyDistrict, history }) => {
-  const router = useRouter();
   return (
     <Card
       onClick={() => Router.pushRoute(`/members/${id}`)}
@@ -14,7 +13,7 @@ const Member = ({ id, name, party, image, constituencyType, constituencyDistrict
           <div className="h1">
             {constituencyDistrict}
           </div>
-          <div className="p1">{constituencyType}</div>
+          <div className="p1">{constituencyType === 'GC' ? '地區直選': '功能組別'}</div>
         </div>
       )}
     >

@@ -15,6 +15,7 @@ const Bill = ({ bill }) => (
     </div>
   </div>
 );
+
 Bill.getInitialProps = async function({ query: { id }}) {
   const bill = await get(id);
   return {

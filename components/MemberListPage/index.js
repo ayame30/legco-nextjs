@@ -8,13 +8,7 @@ const MemberCard = ({ index, member }) => (
   <div className="flex-row-parent flex-middle">
     <div className="h2 flex-self-center flex-40 text-left"><b>{index}</b></div>
     <div className="flex-expand">
-      <Member
-        name={member.name}
-        party={member.party}
-        image={member.image}
-        constituencyType={member.constituencyType}
-        constituency={member.constituencyDistrict}
-      />
+      <Member {...member} />
     </div>
   </div>
 );
