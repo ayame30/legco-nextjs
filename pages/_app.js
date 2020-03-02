@@ -1,12 +1,12 @@
 import NextApp from "next/app";
 import React from "react";
-import withApolloClient from "../lib/withApolloClient";
-import { Router } from "../routes";
+import Layout from "components/DefaultLayout";
 import { ApolloProvider } from '@apollo/react-hooks';
 import NProgress from "nprogress";
 import styles from "scss/style.scss";
-const Layout = ({ children}) => (<div>Hey, Hey {children}</div>);
 
+import withApolloClient from "../lib/withApolloClient";
+import { Router } from "../routes";
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();

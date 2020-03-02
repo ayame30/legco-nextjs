@@ -1,0 +1,22 @@
+@import "scss/_variables.scss";
+
+$dark: $bg-grey3;
+$light: $bg-grey1;
+$background: #fff;
+
+
+.resultRow {
+  border-bottom: $light solid 1px;
+  span {
+    padding: 3px;
+  }
+}
+.constituency {
+  background: $dark;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+}

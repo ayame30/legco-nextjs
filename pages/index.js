@@ -4,7 +4,6 @@ import Section from '../components/Section';
 import { listHottest, listUpComing, listUpdates } from 'api/bills';
 
 
-
 const BillsSection = ({ title, data }) => {
 
   return (
@@ -13,6 +12,7 @@ const BillsSection = ({ title, data }) => {
         {data.map((r) => (
           <Bill
             readStatus={r.status === '二讀' ? 2 : null}
+            id={r.id}
             tags={r.tags}
             name={r.title}
             meetingDate={r.meetingDate}

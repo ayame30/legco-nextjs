@@ -1,0 +1,90 @@
+@import "scss/_variables.scss";
+
+$dark: $bg-grey3;
+$light: $bg-grey2;
+$background: $bg;
+.readStatus {
+  overflow: visible;
+  .icon {
+    z-index: 1;
+    position: relative;
+    font-size: 0;
+    overflow: visible;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      border-top: 3px $light solid;
+      border-bottom: 3px $light solid;
+      z-index: 0;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      position: absolute;
+      top: 50%;
+      left: -7px;
+      margin-top: -10px;
+      
+      border-left: 15px $light solid;
+      border-top: 10px transparent solid;
+      border-bottom: 10px transparent solid;
+      z-index: 0;
+    }
+    i {
+      position: relative;
+      font-size: 42px;
+      background: $background;
+      border-radius: 30px;
+      color: $dark;
+      &::before {
+        content: "";
+        font-weight: 400;
+      }
+    }
+  }
+  &.active .icon i::before {
+    content: "";
+    font-weight: 900;
+  }
+  &:first-of-type .icon::before {
+    left: 50%;
+    width: 50%;
+  }
+  &:last-of-type .icon::before {
+    width: 50%;
+  }
+  &:first-of-type .icon::after {
+    display: none;
+  }
+  &.lastActive .icon::after {
+    border-left: 15px $dark solid;
+  }
+}
+
+.sortButton {
+  border: 1px $dark solid;
+  padding: 3px 10px;
+  border-radius: 15px;
+  margin: 0 5px;
+  &.active {
+    background: $bg-grey1;
+  }
+}
+
+.resultRow {
+  border-bottom: $light solid 1px;
+  span {
+    padding: 3px;
+  }
+}
+.vote {
+  // color: $bg-grey2;
+  font-size: 14px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}

@@ -1,16 +1,25 @@
 import React from 'react'
-import Head from 'next/head'
+import Head from 'next/head';
+import BillPage from "components/BillPage";
+import { get } from 'api/bills';
 
-const Home = () => (
+
+const Bill = ({ bill }) => (
   <div>
     <Head>
       <title>Bill</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div className="hero">
-        Hi
+        <BillPage {...bill} />
     </div>
   </div>
 );
+Bill.getInitialProps = async function({ query: { id }}) {
+  const bill = await get(id);
+  return {
+    bill
+  };
+};
 
-export default Home;
+export default Bill;
