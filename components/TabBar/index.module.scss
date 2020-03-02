@@ -1,0 +1,22 @@
+@import "scss/_variables.scss";
+
+.tabBar {
+  border-bottom: 1px solid $bg-grey2;
+  white-space: nowrap;
+  overflow: visible;
+}
+.root {
+  width: auto;
+  overflow-y:scroll;
+}
+
+.tab {
+  text-align: center;
+  display: inline-block;
+  min-width: 50px;
+  padding: 5px 5px 2px;
+  border-bottom: 3px solid transparent;
+  &.active {
+    border-color: $bg-grey2;
+  }
+}
