@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Bill from '../components/Bill';
-import Section from '../components/Section';
+import Bill from 'components/Bill';
+import Section from 'components/Section';
 import { listHottest, listUpComing, listUpdates } from 'api/bills';
 
 

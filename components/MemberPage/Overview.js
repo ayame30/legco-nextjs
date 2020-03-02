@@ -1,7 +1,8 @@
 import React from 'react';
 import Bill from 'components/Bill';
 import Article from 'components/Article';
-import Card, { CardImage } from 'components/Card';
+import Card from 'components/Card';
+import CardImage from 'components/CardImage';
 import { Line } from 'react-chartjs-2';
 import ProgressBar from 'components/ProgressBar';
 

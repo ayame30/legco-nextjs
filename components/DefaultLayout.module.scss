@@ -23,58 +23,6 @@ $bg-sidemenu: #282828;
   }
 }
 
-.sidemenuContainer {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 0;
-  z-index: 2;
-  &.open {
-    width: 100%;
-    .overlay {
-      opacity: 1;
-    }
-  }
-  .overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    transition: all 0.4s;
-  }
-}
-.sidemenu {
-  position: absolute;
-  left: $sidemenuWidth * -1;
-  top: 0;
-  height: 100%;
-  width: $sidemenuWidth;
-  background: $bg-sidemenu;
-  z-index: 2;
-  color: $text-white;
-  padding: 10px;
-  transition: all 0.4s;
-  &.open {
-    left: 0;
-  }
-  .input {
-    border-radius: 4px;
-    padding: 3px 0;
-    background: $bg;
-    font-size: 20px;
-    i {
-        color: $bg-grey3;
-    }
-  }
-}
-.menu button{
-  color: #fff;
-}
-
 .children {
   height: 100%;
   width: 100%;

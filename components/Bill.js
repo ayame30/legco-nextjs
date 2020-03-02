@@ -1,7 +1,8 @@
 import React from 'react';
 import { Router } from 'routes';
-import TagList from '../TagList';
-import Card, { SecondReadStatus } from '../Card';
+import TagList from 'components/TagList';
+import Card from 'components/Card';
+import SecondReadStatus from 'components/SecondReadStatus';
 
 const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
   const onClick = () => Router.pushRoute(`/bills/${id}`);

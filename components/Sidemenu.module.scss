@@ -4,25 +4,6 @@ $topbarHeight: 44px;
 $sidemenuWidth: 300px;
 $bg-sidemenu: #282828;
 
-.app {
-  height: 100%;
-  overflow: hidden;
-  padding-top: $topbarHeight;
-}
-
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: $topbarHeight;
-  background: #3E3E3E;
-  color: $text-white;
-  i {
-    color: $text-white;
-  }
-}
-
 .sidemenuContainer {
   position: absolute;
   left: 0;
@@ -73,12 +54,4 @@ $bg-sidemenu: #282828;
 }
 .menu button{
   color: #fff;
-}
-
-.children {
-  height: 100%;
-  width: 100%;
-}
-.whenSidemenuOpen {
-  pointer-events: none;
 }

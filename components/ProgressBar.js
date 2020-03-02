@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './index.module.scss';
 import classnames from 'classnames';
+import styles from './ProgressBar.module.scss';
 
 
 export default ({ data, total = 100}) => (

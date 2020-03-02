@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageIcon from '../ImageIcon';
-import Card from '../Card';
+import ImageIcon from 'components/ImageIcon';
+import Card from 'components/Card';
 import { Router } from 'routes';
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import Card, { CardImage } from '../Card';
+import Card from 'components/Card';
+import CardImage from 'components/CardImage.js';
 
 
 

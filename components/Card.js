@@ -1,22 +1,8 @@
 import React from 'react';
-import styles from './index.module.scss';
+import CardImage from 'components/CardImage';
 import classnames from 'classnames';
+import styles from './Card.module.scss';
 
-export const SecondReadStatus = () => (
-  <div className="flex-self-center">
-    <div className="h1">
-      <i className="fas fa-check-circle icon-lg" />
-    </div>
-    <div className="h3">二讀</div>
-  </div>
-);
-
-export const CardImage = ({ image }) => (
-  <div
-    className={classnames(styles.cardImage)}
-    style={{ backgroundImage: `url(${image})` }}
-  />
-);
 
 export default ({ children, statusComponent = null, ...props }) => (
   <button className={classnames(styles.card, { [styles.withStatus]: !!statusComponent })} {...props}>
