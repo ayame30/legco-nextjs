@@ -4,11 +4,13 @@ import membersApi from 'api/members';
 import MemberListPage from 'components/MemberListPage'; 
 import MEMBERS_QUERY from '../graphql/members.query';
 import { useQuery } from '@apollo/react-hooks';
+import ErrorPage from './_error';
 
 
 const Members = () => {
   const { data, loading, error } = useQuery(MEMBERS_QUERY);
   if (loading) return null;
+  if (error) return <ErrorPage />;
   const members = (data.legco_CouncilMembers || []).map(m => ({
     id: m.id,
     name: m.Individual.name_ch,

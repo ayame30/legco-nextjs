@@ -4,11 +4,13 @@ import _ from 'lodash';
 import { useQuery } from '@apollo/react-hooks';
 import MEMBER_QUERY from '../graphql/member.query';
 import MemberPage from 'components/MemberPage';
+import ErrorPage from './_error';
 
 
 const Member = ({ id, page }) => {
-  const { data, loading } = useQuery(MEMBER_QUERY, { variables: { id } });
+  const { data, loading, error } = useQuery(MEMBER_QUERY, { variables: { id } });
   if (loading) return null;
+  if (error) return <ErrorPage />
   
   const member = {
     id: _.get(data, 'member.id', ''),
