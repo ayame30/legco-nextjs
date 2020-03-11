@@ -39,7 +39,7 @@ app
 
     return server.listen(process.env.PORT || config.PORT, '0.0.0.0', (err) => {
       if (err) throw err;
-      console.log(`App started at port ${config.PORT}`);
+      console.log(`App started at port ${process.env.PORT}`);
     });
   })
   .catch((ex) => {
