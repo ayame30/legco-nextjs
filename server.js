@@ -37,7 +37,7 @@ app
     const routeHandler = router.getRequestHandler(app);
     server.use(routeHandler);
 
-    return server.listen(config.PORT, (err) => {
+    return server.listen(process.env.PORT || config.PORT, (err) => {
       if (err) throw err;
       console.log(`App started at port ${config.PORT}`);
     });
