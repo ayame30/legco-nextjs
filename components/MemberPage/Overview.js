@@ -5,6 +5,7 @@ import Card from 'components/Card';
 import CardImage from 'components/CardImage';
 import { Line } from 'react-chartjs-2';
 import ProgressBar from 'components/ProgressBar';
+import VoteStats from './VoteStats';
 
 const sampleCard = (
   <Bill
@@ -16,7 +17,7 @@ const sampleCard = (
 );
 
 
-export default () => {
+export default ({ id, individualId }) => {
   return (
     <div className="p2 overflow-y fullheight">
       <Article title="統計數字">
@@ -38,37 +39,7 @@ export default () => {
           </div>
         </div>
       </Article>
-      <Article title="表決次數">
-        <div className="flex-row-parent p2">
-          <div className="flex-expand text-center">
-            <div className="h1 green"><b>89</b></div>
-            <small className="green">贊成</small>
-          </div>
-          <div className="flex-expand text-center">
-            <div className="h1 red"><b>64</b></div>
-            <small className="red">反對</small>
-          </div>
-          <div className="flex-expand text-center">
-            <div className="h1 yellow"><b>3</b></div>
-            <small className="yellow">棄權</small>
-          </div>
-          <div className="flex-expand text-center">
-            <div className="h1 grey"><b>12</b></div>
-            <small className="grey">缺席</small>
-          </div>
-          <div className="flex-expand text-center">
-            <div className="h1"><b>0</b></div>
-            <small>主持</small>
-          </div>
-        </div>
-        <ProgressBar data={[
-          { value: 89, className: 'bg-green'},
-          { value: 64, className: 'bg-red'},
-          { value: 3, className: 'bg-yellow'},
-          { value: 12, className: 'bg-grey'},
-          { value: 0, className: 'bg-black'},
-        ]} total={168}/>
-      </Article>
+      <VoteStats id={id} individualId={individualId} />
       <Article title="議員關係">
         <div className="flex-row-parent border-bottom my-2">
           <span className="flex-expand">表決意向接近的議員</span>
