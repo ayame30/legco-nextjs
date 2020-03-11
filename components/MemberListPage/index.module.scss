@@ -38,7 +38,6 @@ $width: 200px;
   }
 }
 .sidemenu {
-  @extend .p2;
   position: absolute;
   right: $width * -1;
   top: 0;

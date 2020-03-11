@@ -33,7 +33,7 @@ export default ({ members }) => {
         <div className="flex-expand fullheight">
           <div className={classnames(styles.sidemenuContainer,{ [styles.active]: openFilter })}>
             <button className={styles.overlay} onClick={() => setOpenFilter(false)} />
-            <div className={classnames(styles.sidemenu, 'overflow-y', { [styles.active]: openFilter })}>
+            <div className={classnames(styles.sidemenu, 'p2 overflow-y', { [styles.active]: openFilter })}>
               <div className="border-bottom py-1">議席</div>
               <div className="flex-row-parent multiline py-1">
                 <div className="halfwidth px-1 mb-1">
