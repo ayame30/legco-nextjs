@@ -4,6 +4,7 @@ import { Router } from 'routes';
 import styles from './Sidemenu.module.scss';
 
 const Sidemenu = ({ open, onClose }) => {
+  styles;
   const [ search, setSearch ] = useState('');
   const navItems = [
     { label: '首頁', icon: 'fas fa-home', href: '/' },

@@ -1,8 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './index.module.scss';
+import styles from './TabBar.module.scss';
 
 export const Tab = ({ children, active, value, onClick }) => {
+  styles;
   const onChange = () => onClick(value);
   return (
     <button
@@ -16,6 +17,7 @@ export const Tab = ({ children, active, value, onClick }) => {
 };
 
 export default ({ children, options = [], value, onChange }) => {
+  styles;
   return (
     <div classnames={styles.root}>
       <div className={styles.tabBar}>

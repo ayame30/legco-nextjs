@@ -3,7 +3,6 @@ import Member from 'components/Member';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 
-
 const MemberCard = ({ index, member }) => (
   <div className="flex-row-parent flex-middle">
     <div className="h2 flex-self-center flex-40 text-left"><b>{index}</b></div>
@@ -14,6 +13,7 @@ const MemberCard = ({ index, member }) => (
 );
 
 export default ({ members }) => {
+  styles;
   const [ openFilter, setOpenFilter ] = useState(false);
   
   return (

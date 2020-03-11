@@ -16,6 +16,7 @@ export default ({
   news = [],
   questions = [],
 }) => {
+  styles;
   
   return (
     <div className="p3 overflow-y fullheight">

@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import Sidemenu from 'components/Sidemenu';
 import classnames from 'classnames';
 import styles from './DefaultLayout.module.scss';
-
 // routes config
 
 function DefaultLayout({ children, name }) { // TODO
   const [ open, setOpen ] = useState(false);
   const onClose = () => setOpen(false);
-  
+  styles;
   return (
     <div className={styles.app}>
       <div className={styles.topbar}>

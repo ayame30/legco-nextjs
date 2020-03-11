@@ -4,8 +4,8 @@ import Category from './Category';
 import Swipe from './Swipe';
 import styles from './index.module.scss';
 
-
 export default () => {
+  styles;
   const options = [
     { label: '全部', value: 'all' },
     { label: '福利', value: 'bene' },
