@@ -29,6 +29,7 @@ class App extends NextApp {
   }
 
   render() {
+    styles;
     const { Component, pageProps, apollo, ...rest } = this.props;
     const { route } = this.props.router;
 

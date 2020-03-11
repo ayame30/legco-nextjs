@@ -7,8 +7,8 @@ import { get } from 'api/bills';
 const Bill = ({ bill }) => (
   <div>
     <Head>
-      <title>Bill</title>
-      <link rel='icon' href='/favicon.ico' />
+      <title>議案 - {bill.title}</title>
+      <meta name="description" content={bill.description} />
     </Head>
     <div className='hero'>
         <BillPage {...bill} />
