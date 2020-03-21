@@ -39,7 +39,6 @@ const Member = ({ id, page }) => {
     },
     jobTitle: `議員 - ${member.constituencyType} - ${member.constituencyDistrict}`,
   });
-  if (!id) return null;
 
   return (
     <div>
