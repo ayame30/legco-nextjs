@@ -25,7 +25,7 @@ module.exports = withOffline(withSass({
       },
       {
         urlPattern: /.js/,
-        handler: 'CacheFirst'
+        handler: 'NetworkFirst'
       },
       {
         urlPattern: /graphql/,
