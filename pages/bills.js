@@ -6,6 +6,7 @@ const Bills = () => (
   <div>
     <Head>
       <title>議案列表</title>
+      <meta name="description" content="議案列表" />
     </Head>
     <div className="hero">
         <BillListPage />

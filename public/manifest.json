@@ -1,0 +1,8 @@
+{
+  "name": "立會監察站",
+  "short_name": "立會監察站",
+  "lang": "zh-HK",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#3E3E3E"
+}

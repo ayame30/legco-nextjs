@@ -49,6 +49,7 @@ const Members = () => {
     <div>
       <Head>
         <title>議員列表</title>
+        <meta name="description" content="議員列表" />
         <script type="application/ld+json">{personsSchema}</script>
       </Head>
       <div className="hero">

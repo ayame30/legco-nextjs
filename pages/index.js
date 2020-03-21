@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head'
 import Bill from 'components/Bill';
 import Section from 'components/Section';
 import { listHottest, listUpComing, listUpdates } from 'api/bills';
@@ -27,6 +28,10 @@ const BillsSection = ({ title, data }) => {
 function Home({ listHottestData, listUpComingData, listUpdatesData }) {
   return (
     <div className="fullheight overflow-overlay">
+      <Head>
+        <title>立會監察站</title>
+        <meta name="description" content="立會監察站" />
+      </Head>
       <BillsSection title="熱門法案" data={listHottestData} />
       <BillsSection title="即將表決法案" data={listUpComingData} />
       <BillsSection title="最近表決法案" data={listUpdatesData} />

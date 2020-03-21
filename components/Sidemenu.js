@@ -21,11 +21,11 @@ const Sidemenu = ({ open, onClose }) => {
   
   return (
       <div className={classnames(styles.sidemenuContainer, {[styles.open]: open})}>
-        <button className={styles.overlay} onClick={onClose}/>
+        <button className={styles.overlay} onClick={onClose} aria-label="關閉側欄"/>
         <div className={classnames(styles.sidemenu, {[styles.open]: open})}>
           <div className={classnames(styles.input, 'flex-row-parent flex-center')}>
             <i className="fas fa-search p2 flex-50 text-center"></i>
-            <input placeholder="議員／議案" value={search} onChange={(e) => setSearch(e.target.value)}/>
+            <input aria-label="搜尋議員／議案" placeholder="議員／議案" value={search} onChange={(e) => setSearch(e.target.value)}/>
           </div>
           <div className={classnames(styles.menu, 'py-2')}>
             {navItems.map((item) => (
