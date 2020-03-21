@@ -28,7 +28,7 @@ let NewTabBar = ({ page = '', id }) => {
 }
 
 
-export default ({ page = '', id, member }) => {
+export default ({ page = '', member}) => {
   styles;
   const PageComponent = (routes.find(v => v.value === page) || {}).component;
   
@@ -49,9 +49,9 @@ export default ({ page = '', id, member }) => {
           </div>
         </div>
       </div>
-      <NewTabBar page={page} id={id}/>
+      <NewTabBar page={page} id={member.id}/>
       <div className="p flex-expand overflow-y ">
-        {!!PageComponent && <PageComponent id={member.id} individualId={member.individualId}/>}
+        {!!PageComponent && <PageComponent member={member}/>}
       </div>
     </div>
   )

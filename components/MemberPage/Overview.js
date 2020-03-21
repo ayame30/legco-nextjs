@@ -6,6 +6,8 @@ import CardImage from 'components/CardImage';
 import { Line } from 'react-chartjs-2';
 import ProgressBar from 'components/ProgressBar';
 import VoteStats from './VoteStats';
+import News from './News';
+import Questions from './Questions';
 
 const sampleCard = (
   <Bill
@@ -17,7 +19,7 @@ const sampleCard = (
 );
 
 
-export default ({ id, individualId }) => {
+export default ({ member }) => {
   return (
     <div className="p2 overflow-y fullheight">
       <Article title="統計數字">
@@ -39,7 +41,7 @@ export default ({ id, individualId }) => {
           </div>
         </div>
       </Article>
-      <VoteStats id={id} individualId={individualId} />
+      <VoteStats member={member} />
       <Article title="議員關係">
         <div className="flex-row-parent border-bottom my-2">
           <span className="flex-expand">表決意向接近的議員</span>
@@ -78,72 +80,8 @@ export default ({ id, individualId }) => {
       <Article title="反對的法案" onMore={() => {}}>
         {sampleCard}{sampleCard}{sampleCard}
       </Article>
-      <Article title="相關新聞" onMore={() => {}}>
-        <Card>
-          <div className="flex-row-parent">
-            <div className="flex-100"><CardImage /></div>
-            <div className="flex-expand pl-1 flex-column-parent flex-space-between ">
-              <h5>60至64歲長者福利、就業支援「百無」　議員斥港府帶頭虐老促補漏</h5>
-              <div className="flex-row-parent flex-space-between">
-                <span>Flag - 香港01</span>
-                <span>2019-08-28</span>
-              </div>
-            </div>
-          </div>
-        </Card>
-        <Card>
-          <div className="flex-row-parent">
-            <div className="flex-100"><CardImage /></div>
-            <div className="flex-expand pl-1 flex-column-parent flex-space-between">
-              <h5>60至64歲長者福利、就業支援「百無」　議員斥港府帶頭虐老促補漏</h5>
-              <div className="flex-row-parent flex-space-between">
-                <span>Flag - 香港01</span>
-                <span>2019-08-28</span>
-              </div>
-            </div>
-          </div>
-        </Card>
-        <Card>
-          <div className="flex-row-parent">
-            <div className="flex-100"><CardImage /></div>
-            <div className="flex-expand pl-1 flex-column-parent flex-space-between">
-              <h5>60至64歲長者福利、就業支援「百無」　議員斥港府帶頭虐老促補漏</h5>
-              <div className="flex-row-parent flex-space-between">
-                <span>Flag - 香港01</span>
-                <span>2019-08-28</span>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </Article>
-      
-      <Article title="質詢紀錄" onMore={() => {}}>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-50">1</span>
-          <span className="flex-50"><b>田北辰</b></span>
-          <span className="flex-expand">向 <b>社會福利署</b> 就 <b>現時長者福利</b> 質詢</span>
-        </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-50">2</span>
-          <span className="flex-50"><b>田北辰</b></span>
-          <span className="flex-expand">向 <b>社會福利署</b> 就 <b>現時長者福利</b> 質詢</span>
-        </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-50">3</span>
-          <span className="flex-50"><b>田北辰</b></span>
-          <span className="flex-expand">向 <b>社會福利署</b> 就 <b>現時長者福利</b> 質詢</span>
-        </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-50">4</span>
-          <span className="flex-50"><b>田北辰</b></span>
-          <span className="flex-expand">向 <b>社會福利署</b> 就 <b>現時長者福利</b> 質詢</span>
-        </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-50">5</span>
-          <span className="flex-50"><b>田北辰</b></span>
-          <span className="flex-expand">向 <b>社會福利署</b> 就 <b>現時長者福利</b> 質詢</span>
-        </div>
-      </Article>
+      <News member={member} />
+      <Questions member={member} />
     </div>
   )
 }

@@ -10,9 +10,10 @@ import ProgressBar from 'components/ProgressBar';
 import MEMBER_VOTE_QUERY from 'graphql/memberVote.query';
 
 
-export default ({ id, individualId }) => {
+export default ({ member }) => {
+  if (!member) return null;
   const { data } = useQuery(MEMBER_VOTE_QUERY, {
-    variables: { individualId } 
+    variables: { individualId: member.individualId } 
   });
   const voteCount = {
     yes: _.get(data, 'yes.aggregate.count', 0),
