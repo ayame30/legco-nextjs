@@ -9,8 +9,9 @@ const BillsSection = ({ title, data }) => {
   return (
     <Section title={title} onMore={() => {}}>
       <div>
-        {data.map((r) => (
+        {(data || []).map((r) => (
           <Bill
+            key={r.id}
             readStatus={r.status === '二讀' ? 2 : null}
             id={r.id}
             tags={r.tags}

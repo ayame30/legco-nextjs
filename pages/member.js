@@ -8,6 +8,9 @@ import ErrorPage from './_error';
 
 
 const Member = ({ id, page }) => {
+  
+  if (!id) return null;
+
   const { data, loading, error } = useQuery(MEMBER_QUERY, { variables: { id } });
   if (loading) return null;
   if (error) return <ErrorPage />
