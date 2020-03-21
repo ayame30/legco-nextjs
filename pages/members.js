@@ -31,8 +31,8 @@ const Members = () => {
     "@graph": members.map(member => ({
       '@type': 'Person',
       name: member.name,
-      sameAs: `/members/${member.id}`,
-      url: `/members/${member.id}`,
+      sameAs: `/member/${member.id}`,
+      url: `/member/${member.id}`,
       image: member.image,
       identifier: member.id,
       memberOf: {

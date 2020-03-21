@@ -11,8 +11,8 @@ import Party from './Party';
 styles;
 
 const routes = [
-  { path: '/members/:id/', value: '', exact: true, name: '表現', component: Overview },
-  { path: '/members/:id/party', value: 'party', name: '政黨', component: Party },
+  { path: '/member/:id/', value: '', exact: true, name: '表現', component: Overview },
+  { path: '/member/:id/party', value: 'party', name: '政黨', component: Party },
 ];
 
 
@@ -22,7 +22,7 @@ let NewTabBar = ({ page = '', id }) => {
     value: route.value,
   }));
   const onChange = (path) => {
-    Router.replaceRoute(`/members/${id}/${path}`, `/members/${id}/${path}`, { shallow: true });
+    Router.replaceRoute(`/member/${id}/${path}`, `/member/${id}/${path}`, { shallow: true });
   }
   return <TabBar options={options} value={page} onChange={onChange} />;
 }

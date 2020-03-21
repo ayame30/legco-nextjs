@@ -7,7 +7,7 @@ import { Router } from 'routes';
 const Member = ({ id, name, party, image, constituencyType, constituencyDistrict, history }) => {
   return (
     <Card
-      onClick={() => Router.pushRoute(`/members/${id}`)}
+      onClick={() => Router.pushRoute(`/member/${id}`)}
       statusComponent={(
         <div className="flex-self-center">
           <div className="h1">
