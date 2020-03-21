@@ -1,7 +1,7 @@
 
 import gql from 'graphql-tag';
 
-const MEMBER_QUERY = gql`
+const MEMBER_VOTE_QUERY = gql`
   query MemberVote($individualId: Int) {
     yes: legco_IndividualVote_aggregate(where: {individual: {_eq: $individualId}, result: {_eq: "YES"}}) {
       aggregate {
@@ -32,4 +32,4 @@ const MEMBER_QUERY = gql`
   }
 `;
 
-export default MEMBER_QUERY;
+export default MEMBER_VOTE_QUERY;
