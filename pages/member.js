@@ -9,8 +9,6 @@ import ErrorPage from './_error';
 
 const Member = ({ id, page }) => {
   
-  if (!id) return null;
-
   const { data, loading, error } = useQuery(MEMBER_QUERY, { variables: { id } });
   if (loading) return null;
   if (error) return <ErrorPage />
@@ -41,7 +39,8 @@ const Member = ({ id, page }) => {
     },
     jobTitle: `議員 - ${member.constituencyType} - ${member.constituencyDistrict}`,
   });
-  
+  if (!id) return null;
+
   return (
     <div>
       <Head>
