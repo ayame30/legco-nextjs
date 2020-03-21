@@ -4,7 +4,7 @@ import BillPage from 'components/BillPage';
 import { get } from 'api/bills';
 
 
-const Bill = ({ bill }) => (
+const Bill = ({ bill = {} }) => (
   <div>
     <Head>
       <title>議案 - {bill.title}</title>
