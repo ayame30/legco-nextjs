@@ -53,7 +53,8 @@ const Member = ({ id, page }) => {
   );
 }
 
-Member.getInitialProps = async function({ query: { id, page }}) {
+Member.getInitialProps = async function({ query, query: { id, page }}) {
+  console.log(query);
   return { id, page };
 };
 

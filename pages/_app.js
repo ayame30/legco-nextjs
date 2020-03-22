@@ -20,14 +20,6 @@ Router.events.on("routeChangeError", (err) => {
 });
 
 class App extends NextApp {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps };
-  }
-
   render() {
     styles;
     const { Component, pageProps, apollo, ...rest } = this.props;
