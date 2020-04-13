@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import membersApi from 'api/members';
 import MemberListPage from 'components/MemberListPage'; 
 import MEMBERS_QUERY from '../graphql/members.query';
 import { useQuery } from '@apollo/react-hooks';

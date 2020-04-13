@@ -3,6 +3,7 @@ import { Router } from 'routes';
 import TagList from 'components/TagList';
 import Card from 'components/Card';
 import SecondReadStatus from 'components/SecondReadStatus';
+import moment from 'moment';
 
 const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
   const onClick = () => Router.pushRoute(`/bills/${id}`);
@@ -14,7 +15,7 @@ const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
     >
       <TagList list={tags} />
       <h3 className="my-1">{name}</h3>
-      <small>下次開會 {meetingDate}</small>
+      {!!meetingDate && <small>下次開會 {moment(meetingDate).format('YYYY-MM-DD')}</small>}
     </Card>
   );
 };
