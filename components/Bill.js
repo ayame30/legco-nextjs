@@ -16,6 +16,7 @@ const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
       <TagList list={tags} />
       <h3 className="my-1">{name}</h3>
       {!!meetingDate && <small>下次開會 {moment(meetingDate).format('YYYY-MM-DD')}</small>}
+      <small>下次開會 0000-00-00</small>
     </Card>
   );
 };

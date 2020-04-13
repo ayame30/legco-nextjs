@@ -58,6 +58,9 @@ $background: $bg;
   &:last-of-type .icon::before {
     width: 50%;
   }
+  &:last-of-type:first-of-type .icon::before {
+    width: 0;
+  }
   &:first-of-type .icon::after {
     display: none;
   }

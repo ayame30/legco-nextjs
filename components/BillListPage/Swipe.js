@@ -18,6 +18,8 @@ const CategoryPage = ({ category }) => {
     <div className="p3 py-1 fullheight overflow-y">
       {bills.map((r) => (
         <Bill
+          id={r.id}
+          key={r.id}
           readStatus={2}
           tags={[category]}
           name={r.title}
@@ -36,7 +38,7 @@ export default ({ index, onChange, categories }) => {
   return (
     <SwipeableViews index={index} onChangeIndex={onChange}>
       {categories.map(({ label, value }, index) => (
-        <CategoryPage category={shouldFetch[index] ? label : null} />
+        <CategoryPage key={value} category={shouldFetch[index] ? label : null} />
       ))}
     </SwipeableViews>
   )
