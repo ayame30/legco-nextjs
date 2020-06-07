@@ -21,7 +21,7 @@ const Member = ({ id, name, party, image, constituencyType, constituencyDistrict
         <ImageIcon image={image} />
         <div className="flex-expand px-2 flex-self-center">
           <h3 className=""><b>{name}</b></h3>
-          <p>{party}</p>
+          <p>{party.name}</p>
         </div>
       </div>
     </Card>

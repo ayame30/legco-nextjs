@@ -1,14 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Router } from 'routes';
-import Loading from 'components/Loading';
 
 import TabBar from 'components/TabBar';
 import ImageIcon from 'components/ImageIcon';
 import styles from './index.module.scss';
 import Overview from './Overview';
 import Party from './Party';
-styles;
 
 const routes = [
   { path: '/member/:id/', value: '', exact: true, name: '表現', component: Overview },
@@ -29,7 +27,6 @@ let NewTabBar = ({ page = '', id }) => {
 
 
 export default ({ page = '', member}) => {
-  styles;
   const PageComponent = (routes.find(v => v.value === page) || {}).component;
   
   return (
@@ -38,7 +35,7 @@ export default ({ page = '', member}) => {
         <ImageIcon image={member.image} />
         <div className="flex-expand px-2">
           <h3 className=""><b>{member.name}</b></h3>
-          <p>{member.party}</p>
+          <p>{member.party.name}</p>
         </div>
         <div className={classnames(styles.constituency, 'flex-100')}>
           <div className="flex-self-center fullwidth">

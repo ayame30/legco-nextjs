@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 
 const MEMBERS_QUERY = gql`
   query Members {
-    legco_CouncilMembers(where: {Council: {start_year: {_eq: 2016}}}) {
+    members: legco_CouncilMembers(where: {Council: {start_year: {_eq: 2016}}}) {
       disqualified
       id
       member
