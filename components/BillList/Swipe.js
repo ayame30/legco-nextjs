@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Bill from 'components/Bill';
 import SwipeableViews from 'react-swipeable-views';
-import { listByCategory } from 'api/bills';
 import BILLS_QUERY from 'graphql/bills.query';
 import { useQuery } from '@apollo/react-hooks';
 

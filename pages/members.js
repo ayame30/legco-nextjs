@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import MemberListPage from 'components/MemberListPage'; 
+import MemberList from 'components/MemberList'; 
 import ErrorPage from './_error';
 import memberSchema from 'lib/memberSchema';
 import useMemberList from 'hooks/useMemberList';
@@ -23,7 +23,7 @@ const Members = () => {
         <script type="application/ld+json">{personsSchema}</script>
       </Head>
       <div className="hero">
-        <MemberListPage members={members} />
+        <MemberList members={members} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import BillListPage from 'components/BillListPage';
+import BillList from 'components/BillList';
 
 const Bills = () => (
   <div>
@@ -9,7 +9,7 @@ const Bills = () => (
       <meta name="description" content="議案列表" />
     </Head>
     <div className="hero">
-        <BillListPage />
+        <BillList />
     </div>
   </div>
 );

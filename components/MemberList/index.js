@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import Member from 'components/Member';
 import classnames from 'classnames';
+import _ from 'lodash';
 import styles from './index.module.scss';
 
-const MemberCard = ({ index, member }) => (
-  <div className="flex-row-parent flex-middle">
-    <div className="h2 flex-self-center flex-40 text-left"><b>{index}</b></div>
-    <div className="flex-expand">
-      <Member {...member} />
-    </div>
-  </div>
-);
-
 export default ({ members }) => {
-  styles;
+
   const [ openFilter, setOpenFilter ] = useState(false);
-  
+  const parties = useMemo(() => {
+    const all = _.map(members, (m) => _.get(m, 'party')).filter(p => _.get(p, 'id'));
+    return _.uniqBy(all, 'id');
+  }, [members]);
+
+  const districts = useMemo(() => {
+    const all = _.map(members.filter(m => m.constituencyType === 'GC'), (m) => _.get(m, 'constituencyDistrict'));
+    return _.uniq(all);
+  }, [members]);
+
+  const fDistricts = useMemo(() => {
+    const all = _.map(members.filter(m => m.constituencyType === 'FC'), (m) => _.get(m, 'constituencyDistrict'));
+    return _.uniq(all);
+  }, [members]);
   return (
     <div className="fullheight">
       <div className="flex-column-parent fullheight">
@@ -36,39 +41,36 @@ export default ({ members }) => {
             <div className={classnames(styles.sidemenu, 'p2 overflow-y', { [styles.active]: openFilter })}>
               <div className="border-bottom py-1">議席</div>
               <div className="flex-row-parent multiline py-1">
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>新界東</button>
-                </div>
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>新界東</button>
-                </div>
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>新界東</button>
-                </div>
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>新界東</button>
-                </div>
+                {districts.map(d => (
+                  <div className="halfwidth px-1 mb-1" key={d}>
+                    <button className={styles.filterButton}>{d}</button>
+                  </div>
+                ))}
+                {fDistricts.sort().map(d => (
+                  <div className="halfwidth px-1 mb-1" key={d}>
+                    <button className={styles.filterButton}>{d}</button>
+                  </div>
+                ))}
               </div>
               <div className="border-bottom py-1">政黨</div>
               <div className="flex-row-parent multiline py-1">
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>新民黨</button>
-                </div>
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>民建聯</button>
-                </div>
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>工黨</button>
-                </div>
-                <div className="halfwidth px-1 mb-1">
-                  <button className={styles.filterButton}>街工</button>
-                </div>
+                {parties.sort().map(party => (
+                  <div key={party.id} className="halfwidth px-1 mb-1">
+                    <button className={styles.filterButton}>{party.name}</button>
+                  </div>
+                ))}
+                
               </div>
             </div>
           </div>
           <div className="p3 fullheight overflow-y">
             {members.map((m, i) => (
-              <MemberCard index={i + 1} key={m.id} member={m} />
+              <div className="flex-row-parent flex-middle" key={m.id}>
+                <div className="h2 flex-self-center flex-40 text-left"><b>{i + 1}</b></div>
+                <div className="flex-expand">
+                  <Member {...m} />
+                </div>
+              </div>
             ))}
           </div>
         </div>

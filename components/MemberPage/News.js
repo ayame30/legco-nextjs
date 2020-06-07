@@ -1,10 +1,9 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-
 import Article from 'components/Article';
 import Card from 'components/Card';
 import CardImage from 'components/CardImage';
-import MEMBER_NEWS_QUERY from 'graphql/memberNews.query';
+import useMemberNews from 'hooks/useMemberNews';
+
 
 const SOURCES = {
   appledaily: {
@@ -12,19 +11,15 @@ const SOURCES = {
     label: '蘋果日報'
   }
 }
-export default ({ member }) => {
-  if (!member) return null;
-  
-  const { data, loading } = useQuery(MEMBER_NEWS_QUERY, {
-    variables: { individualId: member.individualId, limit: 3 }
-  });
-  if (loading || !data.memberNews) return null;
+export default ({ member }) => {  
+  const { data, loading } = useMemberNews({ member });
+  if (loading || !data.length) return null;
   
   
   return (
     <Article title="相關新聞" onMore={() => {}}>
-      {data.memberNews.map(({ news }) => (
-        <Card key={news.key} onClick={() => window.open(news.link)}>
+      {data.map((news) => (
+        <Card key={news.id} onClick={() => window.open(news.link)}>
           <div className="flex-row-parent">
             <div className="flex-100"><CardImage image={news.image} /></div>
             <div className="flex-expand pl-1 flex-column-parent flex-space-between ">
