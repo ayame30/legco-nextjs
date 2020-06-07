@@ -52,6 +52,14 @@ $bg-sidemenu: #282828;
         color: $bg-grey3;
     }
   }
+  .logo {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    left: 10%;
+    margin-bottom: 61px;
+    display: block;
+  }
 }
 .menu button{
   color: #fff;

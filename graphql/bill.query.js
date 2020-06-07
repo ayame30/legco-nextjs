@@ -16,6 +16,14 @@ const BILL_QUERY = gql`
     billDescription: legco_BillDescription_by_pk(internal_key: $internal_key) {
       description
     }
+    billMeeting: legco_BillMeeting(internal_key: $internal_key) {
+      agenda
+      attendance
+      cancelled
+      internal_key
+      date
+      minutes
+    }
   }
 `;
 

@@ -35,6 +35,7 @@ const Sidemenu = ({ open, onClose }) => {
               </button>
             ))}
           </div>
+          <img className={styles.logo} src="/logo.svg" alt="Logo" />
         </div>
       </div>
   );

@@ -6,7 +6,6 @@ import { listHottest, listUpComing, listUpdates } from 'api/bills';
 
 
 const BillsSection = ({ title, data }) => {
-
   return (
     <Section title={title} onMore={() => {}}>
       <div>

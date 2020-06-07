@@ -1,8 +1,6 @@
-@import "scss/_custom.scss";
 @import "scss/_variables.scss";
 
 .imageIcon {
-  @extend .background-cover;
   background-position: center;
   background-size: cover;
   width: 50px;

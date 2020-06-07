@@ -1,6 +1,5 @@
 // Here you can add other styles
 
-:global{
   @import "scss/_variables.scss";
   html, body, * {
     font-family: 'Noto Sans TC', sans-serif;
@@ -311,4 +310,3 @@
   .bg-yellow { background-color: $yellow; }
   .bg-grey { background-color: $grey; }
   .bg-black { background-color: $black; }
-}
