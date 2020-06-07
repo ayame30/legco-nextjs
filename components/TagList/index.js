@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './TagList.module.scss';
+import styles from './index.module.scss';
 
 
 export default ({ list = [] }) => {

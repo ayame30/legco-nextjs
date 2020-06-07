@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { Router } from 'routes';
-import styles from './Sidemenu.module.scss';
+import styles from './index.module.scss';
 
 const Sidemenu = ({ open, onClose }) => {
   styles;

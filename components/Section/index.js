@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Section.module.scss';
+import styles from './index.module.scss';
 
 export default ({ children, title, onMore }) => {
   styles;

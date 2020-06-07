@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './TabBar.module.scss';
+import styles from './index.module.scss';
 
 export const Tab = ({ children, active, value, onClick }) => {
   styles;

@@ -1,7 +1,6 @@
 import React from 'react';
-import CardImage from 'components/CardImage';
 import classnames from 'classnames';
-import styles from './Card.module.scss';
+import styles from './index.module.scss';
 
 export default ({ children, statusComponent = null, ...props }) => {
   styles;

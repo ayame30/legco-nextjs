@@ -2,8 +2,6 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
 import Article from 'components/Article';
-import Card from 'components/Card';
-import CardImage from 'components/CardImage';
 import MEMBER_QUESTIONS_QUERY from 'graphql/memberQuestions.query';
 
 

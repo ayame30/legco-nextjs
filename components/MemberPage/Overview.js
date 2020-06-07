@@ -1,10 +1,7 @@
 import React from 'react';
 import Bill from 'components/Bill';
 import Article from 'components/Article';
-import Card from 'components/Card';
-import CardImage from 'components/CardImage';
 import { Line } from 'react-chartjs-2';
-import ProgressBar from 'components/ProgressBar';
 import VoteStats from './VoteStats';
 import News from './News';
 import Questions from './Questions';

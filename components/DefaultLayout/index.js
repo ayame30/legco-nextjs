@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Sidemenu from 'components/Sidemenu';
 import classnames from 'classnames';
-import styles from './DefaultLayout.module.scss';
+import styles from './index.module.scss';
 // routes config
 
 function DefaultLayout({ children, name }) { // TODO

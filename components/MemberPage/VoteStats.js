@@ -1,11 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import _ from 'lodash';
-import Bill from 'components/Bill';
 import Article from 'components/Article';
-import Card from 'components/Card';
-import CardImage from 'components/CardImage';
-import { Line } from 'react-chartjs-2';
 import ProgressBar from 'components/ProgressBar';
 import MEMBER_VOTE_QUERY from 'graphql/memberVote.query';
 
