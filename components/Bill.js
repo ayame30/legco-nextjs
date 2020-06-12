@@ -5,7 +5,7 @@ import Card from 'components/Card';
 import SecondReadStatus from 'components/SecondReadStatus';
 import moment from 'moment';
 
-const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
+const Bill = ({ id, readStatus = null, tags = [], title, meetingDate }) => {
   const onClick = () => Router.pushRoute(`/bills/${id}`);
   
   return (
@@ -14,9 +14,8 @@ const Bill = ({ id, readStatus = null, tags = [], name, meetingDate }) => {
       onClick={onClick}
     >
       <TagList list={tags} />
-      <h3 className="my-1">{name}</h3>
+      <h3 className="my-1">{title}</h3>
       {!!meetingDate && <small>下次開會 {moment(meetingDate).format('YYYY-MM-DD')}</small>}
-      <small>下次開會 0000-00-00</small>
     </Card>
   );
 };

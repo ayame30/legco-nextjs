@@ -5,6 +5,8 @@ routes
   .add('index', '/', 'index')
   .add('bill', '/bills/:id', 'bill')
   .add('bills', '/bills', 'bills')
+  .add('game', '/games/:id', 'game')
+  .add('games', '/games', 'games')
   .add('member', '/member/:id/:page?', 'member')
   .add('members', '/members', 'members');
   

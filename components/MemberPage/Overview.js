@@ -20,16 +20,16 @@ export default ({ member }) => {
   return (
     <div className="p2 overflow-y fullheight">
       <Article title="統計數字">
-        <div className="flex-row-parent">
+        <div className="flex-row">
           <div className="halfwidth p1">
-            <div className="flex-row-parent py-1">
-              <span className="flex-expand">近月出席率</span>
-              <span className="flex-expand text-right">92%</span>
+            <div className="flex-row py-1">
+              <span className="flex">近月出席率</span>
+              <span className="flex text-right">92%</span>
               <span className="flex-50 text-right">7<i className="arrow-up green" /></span>
             </div>
-            <div className="flex-row-parent py-1">
-              <span className="flex-expand">近月投票率</span>
-              <span className="flex-expand text-right">89%</span>
+            <div className="flex-row py-1">
+              <span className="flex">近月投票率</span>
+              <span className="flex text-right">89%</span>
               <span className="flex-50 text-right">14<i className="arrow-down red" /></span>
             </div>
           </div>
@@ -40,33 +40,33 @@ export default ({ member }) => {
       </Article>
       <VoteStats member={member} />
       <Article title="議員關係">
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-expand">表決意向接近的議員</span>
+        <div className="flex-row border-bottom my-2">
+          <span className="flex">表決意向接近的議員</span>
           <span className="flex-100 text-right green"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right green"><b>葛珮帆 (83%)</b></span>
         </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-expand">最常支持誰的議案</span>
+        <div className="flex-row border-bottom my-2">
+          <span className="flex">最常支持誰的議案</span>
           <span className="flex-100 text-right green"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right green"><b>葛珮帆 (83%)</b></span>
         </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-expand">提出的議案最常被誰支持</span>
+        <div className="flex-row border-bottom my-2">
+          <span className="flex">提出的議案最常被誰支持</span>
           <span className="flex-100 text-right green"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right green"><b>葛珮帆 (83%)</b></span>
         </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-expand">表決意向相反的議員</span>
+        <div className="flex-row border-bottom my-2">
+          <span className="flex">表決意向相反的議員</span>
           <span className="flex-100 text-right red"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right red"><b>葛珮帆 (83%)</b></span>
         </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-expand">最常反對誰的議案</span>
+        <div className="flex-row border-bottom my-2">
+          <span className="flex">最常反對誰的議案</span>
           <span className="flex-100 text-right red"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right red"><b>葛珮帆 (83%)</b></span>
         </div>
-        <div className="flex-row-parent border-bottom my-2">
-          <span className="flex-expand">提出的議案最常被誰反對</span>
+        <div className="flex-row border-bottom my-2">
+          <span className="flex">提出的議案最常被誰反對</span>
           <span className="flex-100 text-right red"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right red"><b>葛珮帆 (83%)</b></span>
         </div>          

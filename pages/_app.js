@@ -6,6 +6,7 @@ import NProgress from "nprogress";
 import styles from "scss/style.scss";
 
 import withApolloClient from "../lib/withApolloClient";
+
 import { Router } from "../routes";
 
 Router.events.on("routeChangeStart", () => {

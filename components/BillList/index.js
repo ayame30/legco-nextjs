@@ -25,9 +25,9 @@ export default () => {
   const i = options.map(o => o.value).indexOf(value);
   
   return (
-    <div className="flex-column-parent fullheight">
-      <div className="flex-row-parent flex-center px-1 pt-2">
-        <div className="flex-expand overflow-overlay">
+    <div className="flex-column fullheight">
+      <div className="flex-row flex-center px-1 pt-2">
+        <div className="flex overflow-overlay">
           <TabBar options={options} value={value} onChange={onCategoryChange} />
         </div>
         <hr className="vertical ml-1"/>
@@ -36,7 +36,7 @@ export default () => {
           分類
         </button>
       </div>
-      <div className="flex-expand overflow-y">
+      <div className="flex overflow-y">
         <Category open={openCategory} value={value} options={options} onChange={onCategoryChange}/>
         <div className={styles.swipeContainer}>
           <Swipe

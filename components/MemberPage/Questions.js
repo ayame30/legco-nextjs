@@ -11,13 +11,13 @@ export default ({ member }) => {
     <Article title="質詢紀錄" onMore={() => {}}>
       {data.map((question, i) => (
         <button
-          className="fullwidth flex-row-parent border-bottom my-2"
+          className="fullwidth flex-row border-bottom my-2"
           key={question.id}
           onClick={() => window.open(question.link)}
         >
           <span className="flex-50">{i + 1}</span>
           <span className="flex-50"><b>{member.name}</b></span>
-          <span className="flex-expand">就 <b>{question.title}</b> {question.type}</span>
+          <span className="flex">就 <b>{question.title}</b> {question.type}</span>
         </button>
       ))}
     </Article>

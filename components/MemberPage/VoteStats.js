@@ -12,24 +12,24 @@ export default ({ member }) => {
   
   return (
     <Article title="表決次數">
-      <div className="flex-row-parent p2">
-        <div className="flex-expand text-center">
+      <div className="flex-row p2">
+        <div className="flex text-center">
           <div className="h1 green"><b>{voteCount.yes}</b></div>
           <small className="green">贊成</small>
         </div>
-        <div className="flex-expand text-center">
+        <div className="flex text-center">
           <div className="h1 red"><b>{voteCount.no}</b></div>
           <small className="red">反對</small>
         </div>
-        <div className="flex-expand text-center">
+        <div className="flex text-center">
           <div className="h1 yellow"><b>{voteCount.abstain}</b></div>
           <small className="yellow">棄權</small>
         </div>
-        <div className="flex-expand text-center">
+        <div className="flex text-center">
           <div className="h1 grey"><b>{voteCount.absent}</b></div>
           <small className="grey">缺席</small>
         </div>
-        <div className="flex-expand text-center">
+        <div className="flex text-center">
           <div className="h1"><b>{voteCount.present}</b></div>
           <small>主持</small>
         </div>

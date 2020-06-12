@@ -15,7 +15,7 @@ const BillsSection = ({ title, data }) => {
             readStatus={r.status === '二讀' ? 2 : null}
             id={r.id}
             tags={r.tags}
-            name={r.title}
+            title={r.title}
             meetingDate={r.meetingDate}
           />
         ))}

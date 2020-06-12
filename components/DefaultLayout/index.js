@@ -28,7 +28,7 @@ function DefaultLayout({ children, name }) { // TODO
 
       </Head>
       <div className={styles.topbar}>
-        <div className="fullheight flex-row-parent flex-center">
+        <div className="fullheight flex-row flex-center">
           <button aria-label="開關側欄" onClick={() => setOpen(prev => !prev)} className="flex-70">
             {open ? <i className="fas fa-times h2 px-3" /> : <i className="fas fa-bars h2 px-3" />}
           </button>

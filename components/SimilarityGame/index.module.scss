@@ -1,0 +1,28 @@
+@import "scss/_variables.scss";
+.status {
+  margin: 3px;
+  border-radius: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  &:global(.bg-red) {
+    background-color: $red;
+  }
+  &:global(.bg-green) {
+    background-color: $green;
+  }
+
+}
+.listTitle {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.list {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  li {
+    line-height: 1.5;
+    list-style-type: disc;
+  }
+}

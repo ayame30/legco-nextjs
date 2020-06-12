@@ -17,11 +17,11 @@ const Member = ({ id, name, party, image, constituencyType, constituencyDistrict
         </div>
       )}
     >
-      <div className="flex-row-parent">
+      <div className="flex-row">
         <ImageIcon image={image} />
-        <div className="flex-expand px-2 flex-self-center">
+        <div className="flex px-2 flex-self-center">
           <h3 className=""><b>{name}</b></h3>
-          <p>{party.name}</p>
+          <p>{party && party.name}</p>
         </div>
       </div>
     </Card>

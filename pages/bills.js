@@ -9,7 +9,7 @@ const Bills = () => (
       <meta name="description" content="議案列表" />
     </Head>
     <div className="hero">
-        <BillList />
+      <BillList />
     </div>
   </div>
 );

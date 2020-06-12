@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import classnames from 'classnames';
+import React from 'react';
 import Article from 'components/Article';
 import Vote from './Vote';
 import News from './News';
@@ -16,7 +15,6 @@ export default ({
   news = [],
   questions = [],
 }) => {
-  styles;
   
   return (
     <div className="p3 overflow-y fullheight">
@@ -28,7 +26,7 @@ export default ({
       </Article>
       
       <Article title="進度">
-        <div className="flex-row-parent flex-space-between">
+        <div className="flex-row flex-space-between">
           {processes.map((p, i) => (
             <ReadingStatus
               key={i}
@@ -51,10 +49,10 @@ export default ({
       
       <Article title="質詢紀錄" onMore={() => {}}>
         {questions.map((q, i) => (
-          <div key={i} className="flex-row-parent border-bottom my-2">
+          <div key={i} className="flex-row border-bottom my-2">
             <div className="flex-50">{i + 1}</div>
             <div className="flex-50"><b>{q.member.name}</b></div>
-            <div className="flex-expand">向 <b>{q.target}</b> 就 <b>{q.title}</b> 質詢</div>
+            <div className="flex">向 <b>{q.target}</b> 就 <b>{q.title}</b> 質詢</div>
           </div>
         ))}
       </Article>

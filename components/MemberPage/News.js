@@ -20,11 +20,11 @@ export default ({ member }) => {
     <Article title="相關新聞" onMore={() => {}}>
       {data.map((news) => (
         <Card key={news.id} onClick={() => window.open(news.link)}>
-          <div className="flex-row-parent">
+          <div className="flex-row">
             <div className="flex-100"><CardImage image={news.image} /></div>
-            <div className="flex-expand pl-1 flex-column-parent flex-space-between ">
+            <div className="flex pl-1 flex-column flex-space-between ">
               <h5>{news.title}</h5>
-              <div className="flex-row-parent flex-space-between">
+              <div className="flex-row flex-space-between">
                 <span style={{ verticalAlign: 'middle' }}>
                   <span
                     className="inline-block mr-1 background-cover"

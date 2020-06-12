@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 const ReadingStatus = ({ label, active, lastActive }) => (
   <div
     className={classnames(
-      'flex-expand text-center',
+      'flex text-center',
       styles.readStatus,
       {
         [styles.active]: active,

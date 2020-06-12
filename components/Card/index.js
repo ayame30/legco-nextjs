@@ -8,7 +8,7 @@ export default ({ children, statusComponent = null, ...props }) => {
     <button className={classnames(styles.card, { [styles.withStatus]: !!statusComponent })} {...props}>
       {children}
       {statusComponent ? (
-        <div className={classnames('flex-row-parent fullheight flex-center flex-middle', styles.status)}>
+        <div className={classnames('flex-row fullheight flex-center flex-middle', styles.status)}>
           {statusComponent}
         </div>
       ): null}

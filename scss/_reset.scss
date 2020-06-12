@@ -215,7 +215,8 @@ textarea {
 
 button,
 input {
-	border: none;
+    border: none;
+    border-radius: unset;
 	background: transparent;
     line-height: normal;
 }

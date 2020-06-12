@@ -30,10 +30,10 @@ export default ({ page = '', member}) => {
   const PageComponent = (routes.find(v => v.value === page) || {}).component;
   
   return (
-    <div className="flex-column-parent fullheight">
-      <div className="flex-row-parent py-2 flex-center px-2">
+    <div className="flex-column fullheight">
+      <div className="flex-row py-2 flex-center px-2">
         <ImageIcon image={member.image} />
-        <div className="flex-expand px-2">
+        <div className="flex px-2">
           <h3 className=""><b>{member.name}</b></h3>
           <p>{member.party.name}</p>
         </div>
@@ -47,7 +47,7 @@ export default ({ page = '', member}) => {
         </div>
       </div>
       <NewTabBar page={page} id={member.id}/>
-      <div className="p flex-expand overflow-y ">
+      <div className="p flex overflow-y ">
         {!!PageComponent && <PageComponent member={member}/>}
       </div>
     </div>

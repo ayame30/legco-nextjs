@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Bill from 'components/Bill';
 import SwipeableViews from 'react-swipeable-views';
-import BILLS_QUERY from 'graphql/bills.query';
-import { useQuery } from '@apollo/react-hooks';
-
+import useBillList from 'hooks/useBillList';
 
 const CategoryPage = ({ category }) => {
   const [ list, setList ] = useState([]);
-  const { data: { bills = [] } = {}, error, loading } = useQuery(BILLS_QUERY, {
-    variables: { limit: 30 },
-    fetchPolicy: 'network-only',
-  });
+  const { data: bills, loading } = useBillList({category});
   if (loading) return null;
 
   return (
     <div className="p3 py-1 fullheight overflow-y">
-      {bills.map((r) => (
+      {bills.map((bill) => (
         <Bill
-          id={r.id}
-          key={r.id}
-          readStatus={2}
-          tags={[category]}
-          name={r.title}
-          meetingDate={r.meetingDate}
+          id={bill.id}
+          key={bill.id}
+          readStatus={bill.readStatus}
+          tags={bill.tags}
+          title={bill.title}
+          meetingDate={bill.meetingDate}
         />
       ))}
     </div>
