@@ -233,6 +233,7 @@
   .border-radius {
     border-radius: 8px;
   }
+  .transparent { color: transparent; }
   .white { color: #fff; }
   .red { color: $red; }
   .green { color: $green; }
@@ -264,3 +265,4 @@
   .border-grey2 { border-color: $bg-grey2; }
   .border-grey3 { border-color: $bg-grey3; }
   .border-black { border-color: $black; }
+  .border-transparent { border-color: transparent;}

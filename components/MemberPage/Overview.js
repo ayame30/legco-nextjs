@@ -5,6 +5,8 @@ import { Line } from 'react-chartjs-2';
 import VoteStats from './VoteStats';
 import News from './News';
 import Questions from './Questions';
+import _ from 'lodash';
+import moment from 'moment';
 
 const sampleCard = (
   <Bill
@@ -15,26 +17,74 @@ const sampleCard = (
   />
 );
 
-
 export default ({ member }) => {
+  const voteRate = {
+    thisMonth: _.find(member.voteRecord, { datetime: moment().format('MMM YY') }).rate,
+    lastMonth: _.find(member.voteRecord, { datetime: moment().subtract(1, 'months').format('MMM YY') }).rate
+  };
+  const attendanceRate = {
+    thisMonth: _.find(member.attendanceRecord, { datetime: moment().format('MMM YY') }).rate,
+    lastMonth: _.find(member.attendanceRecord, { datetime: moment().subtract(1, 'months').format('MMM YY') }).rate
+  };
+  
   return (
     <div className="p2 overflow-y fullheight">
       <Article title="統計數字">
         <div className="flex-row">
           <div className="halfwidth p1">
+            {attendanceRate.thisMonth &&
             <div className="flex-row py-1">
               <span className="flex">近月出席率</span>
-              <span className="flex text-right">92%</span>
-              <span className="flex-50 text-right">7<i className="arrow-up green" /></span>
-            </div>
+              <span className="flex text-right">{attendanceRate.thisMonth}%</span>
+              <span className="flex-50 text-right">
+              {attendanceRate.thisMonth && attendanceRate.lastMonth && attendanceRate.thisMonth !== attendanceRate.lastMonth &&
+                <>
+                  {Math.abs(attendanceRate.thisMonth - attendanceRate.lastMonth)}
+                  {attendanceRate.thisMonth > attendanceRate.lastMonth && <i className="arrow-up green" />}
+                  {attendanceRate.thisMonth < attendanceRate.lastMonth && <i className="arrow-down red" />}
+                </>}
+              </span>
+            </div>}
+            {voteRate.thisMonth &&
             <div className="flex-row py-1">
               <span className="flex">近月投票率</span>
-              <span className="flex text-right">89%</span>
-              <span className="flex-50 text-right">14<i className="arrow-down red" /></span>
-            </div>
+              <span className="flex text-right">{voteRate.thisMonth}%</span>
+              <span className="flex-50 text-right">
+              {voteRate.thisMonth && voteRate.lastMonth && voteRate.thisMonth !== voteRate.lastMonth &&
+                <>
+                  {Math.abs(voteRate.thisMonth - voteRate.lastMonth)}
+                  {voteRate.thisMonth > voteRate.lastMonth && <i className="arrow-up green" />}
+                  {voteRate.thisMonth < voteRate.lastMonth && <i className="arrow-down red" />}
+                </>}
+              </span>
+            </div>}
           </div>
           <div className="halfwidth">
-            <Line data={mainChart} options={mainChartOpts} height={150} />
+            <Line
+              data={{
+                labels: member.voteRecord.map(rate => rate.datetime),
+                datasets: [
+                  {
+                    label: '投票率',
+                    backgroundColor: 'transparent',
+                    borderColor: '#B23131',
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: member.voteRecord.map(d => d.rate),
+                  },
+                  {
+                    label: '出席率',
+                    backgroundColor: 'transparent',
+                    borderColor: '#2DA948',
+                    pointHoverBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    data: member.attendanceRecord.map(d => d.rate),
+                  },
+                ],
+              }}
+              options={mainChartOpts}
+              height={150}
+            />
           </div>
         </div>
       </Article>

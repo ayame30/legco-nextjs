@@ -9,10 +9,12 @@ const Member = ({ id, name, party, image, constituencyType, constituencyDistrict
     <Card
       onClick={() => Router.pushRoute(`/member/${id}`)}
       statusComponent={(
-        <div className="flex-self-center">
-          <div className="h1">
-            {constituencyDistrict}
-          </div>
+        constituencyDistrict && <div className="flex-self-center">
+          {constituencyDistrict.length <= 3 && <div className="h1">{constituencyDistrict}</div>}
+          {constituencyDistrict.length > 3 && constituencyDistrict.length <= 5 && <div className="h2">{constituencyDistrict}</div>}
+          {constituencyDistrict.length > 5 && constituencyDistrict.length <= 8 && <div className="h3">{constituencyDistrict}</div>}
+          {constituencyDistrict.length > 8 && <div className="h4">{constituencyDistrict}</div>}
+
           <div className="p1">{constituencyType === 'GC' ? '地區直選': '功能組別'}</div>
         </div>
       )}

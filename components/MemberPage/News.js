@@ -2,7 +2,7 @@ import React from 'react';
 import Article from 'components/Article';
 import Card from 'components/Card';
 import CardImage from 'components/CardImage';
-import useMemberNews from 'hooks/useMemberNews';
+import useMemberNews from 'hooksRestAPI/useMemberNews';
 
 
 const SOURCES = {
@@ -12,7 +12,7 @@ const SOURCES = {
   }
 }
 export default ({ member }) => {  
-  const { data, loading } = useMemberNews({ member });
+  const { data, loading } = useMemberNews(member.id);
   if (loading || !data.length) return null;
   
   

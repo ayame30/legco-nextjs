@@ -4,8 +4,7 @@ import styles from './index.module.scss';
 
 
 export default ({ list = [] }) => {
-  styles;
-
+  if (!list.length) return null;
   return (
     <div className={styles.tagList}>
       {list.map(label => 

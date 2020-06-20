@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import styles from './index.module.scss';
 
 export default ({ children, statusComponent = null, ...props }) => {
-  styles;
   return (
     <button className={classnames(styles.card, { [styles.withStatus]: !!statusComponent })} {...props}>
       {children}

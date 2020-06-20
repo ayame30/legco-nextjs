@@ -7,11 +7,11 @@ import styles from './index.module.scss';
 export default () => {
   const options = [
     { label: '全部', value: 'all' },
-    { label: '福利', value: 'bene' },
-    { label: '環保', value: 'env' },
-    { label: '人口', value: 'ppl' },
-    { label: '基建', value: 'facility' },
-    { label: '房屋', value: 'housing' },
+    { label: '法律', value: 'law' },
+    { label: '交通運輸', value: 'transport' },
+    { label: '土地房屋', value: 'civil' },
+    { label: '醫療衛生', value: 'health' },
+    { label: '經濟', value: 'econ' },
   ];
   const [ value, setValue ] = useState(options[0].value);
   const [ openCategory, setOpenCategory ] = useState(false);

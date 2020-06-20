@@ -1,9 +1,10 @@
 import React from 'react';
 import Head from 'next/head'
+import { Router } from 'routes';
 
 
 const Game = () => (
-  <button className="border-radius overflow-hidden fullwidth my-3">
+  <button className="border-radius overflow-hidden fullwidth my-3" onClick={() => Router.pushRoute('/game')}>
     <div
       className="fullwidth backgground-cover bg-red"
       style={{ paddingBottom: '30%' }}

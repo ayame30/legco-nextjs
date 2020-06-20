@@ -3,13 +3,13 @@ import Head from 'next/head'
 import _ from 'lodash';
 import MemberPage from 'components/MemberPage';
 import ErrorPage from './_error';
-import useMember from 'hooks/useMember';
+import useMember, { query } from 'hooksRestAPI/useMember';
 import memberSchema from 'lib/memberSchema';
 
 
 const Member = ({ id, page }) => {
   
-  const { data: member, loading, error } = useMember({ id });
+  const { data: member, loading, error } = useMember(id);
   if (loading) return null;
   if (error) return <ErrorPage />
   
@@ -28,8 +28,8 @@ const Member = ({ id, page }) => {
   );
 }
 
-Member.getInitialProps = async function({ query, query: { id, page }}) {
-  console.log(query);
+Member.getInitialProps = async function({ query: { id, page }}) {
+  await query(id);
   return { id, page };
 };
 

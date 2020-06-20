@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from 'routes';
 import TagList from 'components/TagList';
 import Card from 'components/Card';
-import SecondReadStatus from 'components/SecondReadStatus';
+import ReadStatus from 'components/ReadStatus.js';
 import moment from 'moment';
 
 const Bill = ({ id, readStatus = null, tags = [], title, meetingDate }) => {
@@ -10,7 +10,7 @@ const Bill = ({ id, readStatus = null, tags = [], title, meetingDate }) => {
   
   return (
     <Card
-      statusComponent={readStatus === 2 ? <SecondReadStatus /> : null}
+      statusComponent={<ReadStatus status={readStatus} />}
       onClick={onClick}
     >
       <TagList list={tags} />

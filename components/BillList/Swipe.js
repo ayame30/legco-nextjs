@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Bill from 'components/Bill';
 import SwipeableViews from 'react-swipeable-views';
-import useBillList from 'hooks/useBillList';
+import useBillList from 'hooksRestAPI/useBillList';
 
 const CategoryPage = ({ category }) => {
   const [ list, setList ] = useState([]);

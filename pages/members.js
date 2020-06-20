@@ -3,13 +3,13 @@ import Head from 'next/head'
 import MemberList from 'components/MemberList'; 
 import ErrorPage from './_error';
 import memberSchema from 'lib/memberSchema';
-import useMemberList from 'hooks/useMemberList';
+import useMemberList, { query } from 'hooksRestAPI/useMemberList';
+import client from '../lib/client';
 
 const Members = () => {
   const { data: members, loading, error } = useMemberList();
   if (loading) return null;
   if (error) return <ErrorPage />;
-  
   const personsSchema = JSON.stringify({
     '@context': 'http://schema.org/',
     "@graph": members.map(memberSchema),
@@ -28,12 +28,11 @@ const Members = () => {
     </div>
   );
 }
-// 
-// Members.getInitialProps = async function({ query: { id }}) {
-//   const members = await membersApi(id);
-//   return {
-//     members
-//   };
-// };
+
+Members.getInitialProps = async function() {
+  await query();
+
+  return {};
+};
 
 export default Members;

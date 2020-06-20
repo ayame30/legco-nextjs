@@ -1,6 +1,7 @@
 @import "scss/_variables.scss";
 
 .card {
+  min-height: 80px;
   display: block;
   padding: 10px;
   background: $bg-grey1;

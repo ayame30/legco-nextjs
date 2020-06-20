@@ -3,11 +3,12 @@ import React from "react";
 import Layout from "components/DefaultLayout";
 import { ApolloProvider } from '@apollo/react-hooks';
 import NProgress from "nprogress";
-import styles from "scss/style.scss";
-
+import "scss/style.scss";
 import withApolloClient from "../lib/withApolloClient";
-
 import { Router } from "../routes";
+import { ClientContextProvider } from 'react-fetching-library';
+import client from 'lib/client';
+import 'isomorphic-unfetch';
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
@@ -21,16 +22,29 @@ Router.events.on("routeChangeError", (err) => {
 });
 
 class App extends NextApp {
-  render() {
-    styles;
-    const { Component, pageProps, apollo, ...rest } = this.props;
-    const { route } = this.props.router;
+  static async getInitialProps (appContext) {
+    let appProps = {}
 
+    if (typeof NextApp.getInitialProps === 'function') {
+        appProps = await NextApp.getInitialProps(appContext)
+    }
+
+    return {
+        ...appProps,
+        cacheItems: client.cache.getItems(),
+    }
+  }
+
+  render() {
+    const { Component, pageProps, apollo, apiContext, cacheItems, ...rest } = this.props;
+    client.cache.setItems(cacheItems);
     return (
       <ApolloProvider client={apollo}>
-        <Layout>
-          <Component {...rest} {...pageProps} />
-        </Layout>
+        <ClientContextProvider client={client}>
+          <Layout>
+            <Component {...rest} {...pageProps} />
+          </Layout>
+        </ClientContextProvider>
       </ApolloProvider>
     );
   }
