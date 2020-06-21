@@ -6,7 +6,7 @@ import moment from 'moment';
 export default (id) => {
     const { payload: data = [], ...rest } = useQuery({
         method: 'GET',
-        endpoint: '/member/' + id,
+        endpoint: '/member/' + id + '/',
     });
 
     const member = {
@@ -44,5 +44,5 @@ export default (id) => {
 
 export const query = async(id) => client.query({
     method: 'GET',
-    endpoint: '/member/' + id,
+    endpoint: '/member/' + id + '/',
 });

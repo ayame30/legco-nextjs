@@ -32,10 +32,10 @@ export default ({ member }) => {
                       width: 15,
                       height: 15,
                       verticalAlign: 'middle',
-                      backgroundImage: `url(${SOURCES[news.source].flag})`
+                      // backgroundImage: `url(${SOURCES[news.source].flag})`
                     }}
                   />
-                  {SOURCES[news.source].label}
+                  {/* SOURCES[news.source].label */}
                 </span>
                 <span>{news.date}</span>
               </div>
