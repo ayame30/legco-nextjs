@@ -9,10 +9,10 @@ export default () => {
       });
 
     const members = data.map(member => {
-        const voteCount = _.get(member, 'vote_rate[0].2020-06-01 00:00:00.vote_count', 0);
-        const novoteCount = _.get(member, 'vote_rate[0].2020-06-01 00:00:00.no_vote_count', 0);
-        const absentCount = _.get(member, 'attendance_rate[0].2020-06-01 00:00:00.absent_count', 0);
-        const presentCount = _.get(member, 'attendance_rate[0].2020-06-01 00:00:00.present_count', 0);
+        const voteCount = _.get(member, 'stats.0.vote_count', 0);
+        const novoteCount = _.get(member, 'stats.0.no_vote_count', 0);
+        const absentCount = _.get(member, 'stats.0.absent_count', 0);
+        const presentCount = _.get(member, 'stats.0.present_count', 0);
 
         return {
             id: _.get(member, 'id', ''),

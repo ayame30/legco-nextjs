@@ -89,7 +89,7 @@ export default ({ member }) => {
         </div>
       </Article>
       <VoteStats member={member} />
-      <Article title="議員關係">
+      {/* <Article title="議員關係">
         <div className="flex-row border-bottom my-2">
           <span className="flex">表決意向接近的議員</span>
           <span className="flex-100 text-right green"><b>何君堯 (86%)</b></span>
@@ -120,7 +120,7 @@ export default ({ member }) => {
           <span className="flex-100 text-right red"><b>何君堯 (86%)</b></span>
           <span className="flex-100 text-right red"><b>葛珮帆 (83%)</b></span>
         </div>          
-      </Article>
+            </Article> */}
       <Article title="贊成的法案" onMore={() => {}}>
         {sampleCard}{sampleCard}{sampleCard}
       </Article>

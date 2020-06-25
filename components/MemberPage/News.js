@@ -12,7 +12,7 @@ const SOURCES = {
   }
 }
 export default ({ member }) => {  
-  const { data, loading } = useMemberNews(member.id);
+  const { data, loading } = useMemberNews({ id: member.id, page: 1});
   if (loading || !data.length) return null;
   
   

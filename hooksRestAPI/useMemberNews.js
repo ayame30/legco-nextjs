@@ -3,13 +3,13 @@ import { useQuery } from 'react-fetching-library';
 import client from 'lib/client';
 import moment from 'moment';
 
-export default (id) => {
+export default ({ id, page }) => {
     const { payload: data = [], ...rest } = useQuery({
         method: 'GET',
-        endpoint: '/member_news/' + id + '/',
+        endpoint: '/member_news/' + id + '/5/' + page,
     });
 
-    const news = data.map((n) => ({
+    const news = _.get(data, 'news', []).map((n) => ({
         id: n.key,
         link: n.link,
         image: n.image,
@@ -21,6 +21,7 @@ export default (id) => {
     return {
         ...rest,
         data: news,
+        pagination: data.pagination,
         original: data,
     };
 }

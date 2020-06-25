@@ -21,18 +21,31 @@ export default (id) => {
         image: `https://legco.g0vhk.io${_.get(data, 'avatar', '')}`,
         constituencyType: _.get(data, 'constituency_type', ''),
         constituencyDistrict: _.get(data, 'constituency_district', ''),
-        attendanceRecord: _.takeRight(_.get(data, 'attendanceRate', []).map((rate, i) => ({
-            datetime: moment(Object.keys(rate)[0]).format('MMM YY'),
-            rate: _.floor(Object.values(rate)[0]),
-            presentCount: Object.values(_.get(data, `vote_rate.${i}`))[0].present_count,
-            absentCount: Object.values(_.get(data, `vote_rate.${i}`))[0].absent_count,
-        })), 12),
-        voteRecord: _.takeRight(_.get(data, 'voteRate', []).map((rate, i) => ({
-            datetime: moment(Object.keys(rate)[0]).format('MMM YY'),
-            rate: _.floor(Object.values(rate)[0] * 100),
-            voteCount: Object.values(_.get(data, `vote_rate.${i}`))[0].vote_count,
-            noVoteCount: Object.values(_.get(data, `vote_rate.${i}`))[0].no_vote_count,
-        })), 12),
+        attendanceRecord: _.get(data, 'stats', []).map((rate, i) => ({
+            datetime: moment(rate.date).format('MMM YY'),
+            rate: _.round(rate.attendance_rate * 100),
+            presentCount: rate.present_count,
+            absentCount: rate.absent_count,
+        })),
+        voteRecord: _.get(data, 'stats', []).map((rate, i) => ({
+            datetime: moment(rate.date).format('MMM YY'),
+            rate: _.round(rate.vote_rate * 100),
+            voteCount: rate.vote_count,
+            noVoteCount: rate.no_vote_count,
+        })),
+        voteStats: _.get(data, 'stats', []).reduce((acc, stats) => ({
+            yes: acc.yes + stats.yes_count,
+            no: acc.no + stats.no_count,
+            absent: acc.absent + stats.absent_count,
+            abstain: acc.abstain + stats.abstain_count,
+            present: acc.present + stats.present_count,
+        }), {
+            yes: 0,
+            no: 0,
+            absent: 0,
+            abstain: 0,
+            present: 0,
+        })
     };
     
     return {

@@ -7,8 +7,8 @@ import MEMBER_VOTE_QUERY from 'graphql/memberVote.query';
 import useMemberVotes from 'hooks/useMemberVotes';
 
 export default ({ member }) => {
-  const { data: voteCount, loading, error } = useMemberVotes({ member });
-  if (loading || error) return null;
+  const voteCount = member.voteStats
+  if (!voteCount) return null;
   
   return (
     <Article title="表決次數">
@@ -40,7 +40,7 @@ export default ({ member }) => {
         { value: voteCount.abstain, className: 'bg-yellow'},
         { value: voteCount.absent, className: 'bg-grey'},
         { value: voteCount.present, className: 'bg-black'},
-      ]} total={168}/>
+      ]} total={voteCount.yes + voteCount.no + voteCount.abstain + voteCount.absent + voteCount.present}/>
     </Article>
   )
 }
